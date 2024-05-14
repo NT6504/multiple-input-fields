@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+   function App() {
+    const [Reading, setReading] = React.useState(true);
+    const [Travelling, setTravelling] = React.useState(true);
+    const [Dance, setDance] = React.useState(true);
+
+
+
+
+    function handleReadingStatusChange(){
+        setReading(!Reading);
+    }
+
+    function handleTravellingStatusChange(){
+        setTravelling(!Travelling);
+    }
+
+    function handleDanceStatusChange(){
+        setDance(!Dance);
+    }
+
+    return (
+        <label>
+            Reading :
+
+            <input type="checkbox"
+            checked={Reading}
+            onChange={handleReadingStatusChange}
+            />
+            Travelling :
+
+            <input type="checkbox"
+            checked={Travelling}
+            onChange={handleTravellingStatusChange}
+            />
+            Dance :
+
+            <input type="checkbox"
+            checked={Dance}
+            onChange={handleDanceStatusChange}
+            />
+            </label>
+
+            
+
+    )
+   }
+
+   let rootElement = document.getElementById("root");
+   ReactDOM.createRoot(rootElement).render(<App />)
+  </script>
+</html>
